@@ -2,7 +2,7 @@
 
 const id = document.querySelector("#id"),
     pw = document.querySelector("#pw"),
-    loginBtn = document.querySelector("button");
+    loginBtn = document.querySelector("#loginButton");
 
 console.log(id);
 console.log("Hello");

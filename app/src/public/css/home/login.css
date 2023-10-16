@@ -62,9 +62,12 @@ html {
     font-size: 12px;
   }
   /* a -> #loginButton 수정 */
-  .login-box form #loginButton {
+  .login-box form #loginButton,
+  .login-box form #registerButton {
     position: relative;
-    display: inline-block;
+    /* display: inline-block;   */
+    display: flex;
+    justify-content: center;
     padding: 10px 20px;
     color: #03e9f4;
     font-size: 16px;
@@ -76,7 +79,8 @@ html {
     letter-spacing: 4px
   }
   
-  .login-box #loginButton:hover {
+  .login-box #loginButton:hover,
+  .login-box form #registerButton:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;

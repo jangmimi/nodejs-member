@@ -10,6 +10,12 @@ console.log("Hello");
 loginBtn.addEventListener("click", login);
 
 function login() {
+    if (!id.value) {
+        return alert("아이디를 입력해주세요.");
+    }
+    if (!pw.value) {
+        return alert("비밀번호를 입력해주세요.");
+    }
     const req = {
         id: id.value,
         pw: pw.value,
@@ -27,6 +33,7 @@ function login() {
             if (res.success) {
                 location.href = "/";
             } else {
+                if (res.err) return alert(res.err);
                 alert(res.msg);
             }
         }) 

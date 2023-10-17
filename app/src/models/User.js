@@ -10,7 +10,6 @@ class User {
 
     async login() {
         const client = this.body;
-
         try {
             const { id, pw } = await UserStorage.getUserInfo(client.id);
             
@@ -22,7 +21,7 @@ class User {
             }
             return { success: false, msg: "존재하지 않는 아이디입니다." };
         } catch (err) {
-            return { success: false, msg: err };
+            return { success: false, err };
         }
     }
 
@@ -32,9 +31,7 @@ class User {
             const response = await UserStorage.save(client);
             return response;
         } catch (err) {
-            const a = { success: false, msg: err };
-            console.log(typeof a.msg);
-            return a;
+            return { success: false, err };
         }
     }
 }
